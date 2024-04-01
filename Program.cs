@@ -6,25 +6,30 @@ namespace AprovadoReprovado
     {
         static void Main(string[] args)
         {
-            Dados dados = new Dados();
-            bool controle = true;
-            while (controle)
+            Notas notas = new Notas();
+            Console.WriteLine("Insira as 1ª nota (máximo de 30): ");
+            int nota1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Insira as 2ª nota (máximo de 35): ");
+            int nota2 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Insira as 3ª nota (máximo de 35): ");
+            int nota3 = int.Parse(Console.ReadLine());
+            if (nota1 <= 30 && nota2 <= 35 && nota3 <= 35)
             {
-                Console.WriteLine("Insira as 1ª nota (máximo de 30): ");
-                dados.nota1 = int.Parse(Console.ReadLine());
-                Console.WriteLine("Insira as 2ª nota (máximo de 35): ");
-                dados.nota2 = int.Parse(Console.ReadLine());
-                Console.WriteLine("Insira as 3ª nota (máximo de 35): ");
-                dados.nota3 = int.Parse(Console.ReadLine());
-                if (dados.nota1 <= 30 && dados.nota2 <= 35 && dados.nota3 <= 35)
+                double mediafinal = notas.CalcularMedia(nota1, nota2, nota3);
+                double restante = 60 - mediafinal;
+                if (mediafinal >= 60)
                 {
-                    CalculadoraMedia.CalcularMedia(dados);
-                    controle = false;
+                    Console.WriteLine("APROVADO.");
                 }
                 else
                 {
-                    Console.WriteLine("Valores inválidos.");
+                    Console.WriteLine("REPROVADO.");
+                    Console.WriteLine($"Restante necessário - {restante}");
                 }
+            }
+            else
+            {
+                Console.WriteLine("Valores inválidos.");
             }
         }
     }
