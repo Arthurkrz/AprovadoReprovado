@@ -14,9 +14,9 @@ namespace AprovadoReprovado
             int nota3 = int.Parse(Console.ReadLine());
             Aluno a = new Aluno(nome, nota1, nota2, nota3);
             Console.Clear();
-            if (a.n1 <= 100 && a.n2 <= 100 && a.n3 <= 100 && a.n1 >= 0 && a.n2 >= 0 && a.n3 >= 0)
+            if (a.N1 <= 100 && a.N2 <= 100 && a.N3 <= 100 && a.N1 >= 0 && a.N2 >= 0 && a.N3 >= 0)
             {
-                double mediaAluno = a.CalculoMedia(a.n1, a.n2, a.n3);
+                double mediaAluno = a.CalculoMedia(a.N1, a.N2, a.N3);
                 if (mediaAluno > 60)
                 {
                     Console.WriteLine($"Aluno - {a.Nome};\n\nSituação - APROVADO!");

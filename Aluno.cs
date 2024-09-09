@@ -7,9 +7,9 @@ namespace AprovadoReprovado
     public class Aluno
     {
         private string _nome;
-        public int n1;
-        public int n2;
-        public int n3;
+        public int N1 { get; set; }
+        public int N2 { get; set; }
+        public int N3 { get; set; }
         public string Nome
         {
             get
@@ -35,9 +35,9 @@ namespace AprovadoReprovado
         public Aluno(string nome, int nota1, int nota2, int nota3)  
         {
             Nome = nome;
-            n1 = nota1;
-            n2 = nota2;
-            n3 = nota3;
+            N1 = nota1;
+            N2 = nota2;
+            N3 = nota3;
         }
         public double CalculoMedia(int n1, int n2, int n3)
         {
