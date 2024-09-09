@@ -6,10 +6,9 @@ namespace AprovadoReprovado
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Bem vindo ao teste de boletim!\n\nInsira o nome do aluno:");
+            Console.WriteLine($"Bem vindo ao teste de boletim!\n\n" +
+                $"Insira, linha por linha, o nome do aluno e suas notas nos três trimestres:");
             string nome = Console.ReadLine();
-            Console.Clear();
-            Console.WriteLine($"Nome do aluno: {nome}\n\nInsira, linha por linha, as notas do aluno dos três trimestres:");
             int nota1 = int.Parse(Console.ReadLine());
             int nota2 = int.Parse(Console.ReadLine());
             int nota3 = int.Parse(Console.ReadLine());
@@ -20,11 +19,11 @@ namespace AprovadoReprovado
                 double mediaAluno = a.CalculoMedia(a.n1, a.n2, a.n3);
                 if (mediaAluno > 60)
                 {
-                    Console.WriteLine($"Aluno - {a.nome};\n\nSituação - APROVADO!");
+                    Console.WriteLine($"Aluno - {a.Nome};\n\nSituação - APROVADO!");
                 }
                 else
                 {
-                    Console.WriteLine($"Aluno - {a.nome};\n\nSituação - REPROVADO!\nNota em débito - {60 - mediaAluno:F2}");
+                    Console.WriteLine($"Aluno - {a.Nome};\n\nSituação - REPROVADO!\nNota em débito - {60 - mediaAluno:F2}");
                 }
             }
             else
